@@ -266,8 +266,8 @@ export default function ServicesPage() {
               Ready to Transform Your Digital Presence?
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-              Let's discuss how we can help you achieve your business goals with
-              our technology expertise.
+              {`Let's discuss how we can help you achieve your business goals with
+              our technology expertise.`}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button className="px-8 py-4 bg-white text-primary hover:bg-opacity-90 rounded-lg font-medium transition-colors shadow-lg">
@@ -315,7 +315,7 @@ export default function ServicesPage() {
                 Our Featured Work
               </h2>
               <p className="text-color-gray max-w-2xl mx-auto mb-12">
-                See how we've helped businesses transform digitally
+                {`See how we've helped businesses transform digitally`}
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -4,6 +4,7 @@ import Template1 from '@/components/Template1';
 import Template2 from '@/components/Template2';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { AxiosError } from 'axios';
 
 export default function Home() {
   const [namaPengirim, setNamaPengirim] = useState('');
@@ -38,8 +39,9 @@ export default function Home() {
       } else {
         alert('Gagal generate ucapan: ' + data.error);
       }
-    } catch (err: any) {
-      alert('Error: ' + err.message);
+    } catch (err) {
+      const e = err as AxiosError;
+      alert('Error: ' + e.response?.data);
     } finally {
       setLoading(false);
     }

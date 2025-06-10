@@ -1,3 +1,4 @@
+import { AxiosError } from 'axios';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
@@ -47,9 +48,10 @@ export async function POST(request: NextRequest) {
     const ucapan = data.choices[0].message.content;
 
     return NextResponse.json({ ucapan }, { status: 200 });
-  } catch (error: any) {
+  } catch (error) {
+    const e = error as AxiosError;
     return NextResponse.json(
-      { error: error.message || 'Unknown error' },
+      { error: e.response?.data || 'Unknown error' },
       { status: 500 }
     );
   }
